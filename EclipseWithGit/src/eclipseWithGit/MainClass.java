@@ -2,7 +2,7 @@ package eclipseWithGit;
 
 import javax.swing.JOptionPane;
 
-public class main
+public class MainClass
 {
 	public static void main(String[] args)
 	{
