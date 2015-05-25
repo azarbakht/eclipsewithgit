@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/eclipseWithGit/JavaProgram.java</name>
-			<type>1</type>
-			<location>/home/aha/Desktop/JavaProgramEclipse.java</location>
-		</link>
-	</linkedResources>
 </projectDescription>
