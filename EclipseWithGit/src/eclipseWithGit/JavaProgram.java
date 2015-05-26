@@ -66,21 +66,26 @@ public class JavaProgram {
 		JOptionPane.showMessageDialog(null, khatGUI);
 
 		// IF STATEMENT ******************************************************************************************
-		
+		System.out.println("Enter a number, and we'll tell you if it's greater or less than 7: ");
 		float adadefloat = input.nextFloat();
+		input.close();
 		if (adadefloat > 7){
-			System.out.println("bozorgtar az 7 eh");
+			System.out.println(adadefloat + " bozorgtar az 7 eh");
 		}
 		else if (adadefloat < 7){
-			System.out.println("koochiktar az 7 eh");
+			System.out.println(adadefloat + " koochiktar az 7 eh");
 		}
 		else {
-			System.out.println("mosaavi e 7 eh");
+			System.out.println(adadefloat + " mosaavi e 7 eh");
 		}
 
 		// INLINE True/False check BOOLEAN ************************************************************************
-		boolean even = adadefloat % 7 == 0;
-		System.out.println(even);
+		boolean even = adadefloat % 2 == 0;
+		if(even == true){
+			System.out.println(adadefloat + " is an even number");
+		} else if(even == false){
+			System.out.println(adadefloat + " is an odd number");
+		}
 
 		// Generate a RANDOM NUMBER *******************************************************************************
 		// Math.random() returns a double value between 0.0 and 1.0, but not 1.0		
@@ -98,34 +103,28 @@ public class JavaProgram {
 		}
 
 		// EXIT STATUS (Normal vs. Abnormal) ***********************************************************************
-		
 		int status = 0;
-		System.exit(status);		// age status 0 bedim, yani normal. (gheyre 0 bedim yani abnormal)
-		
-
+		// be System.exit(status); age status 0 bedim, yani normal. (gheyre 0 bedim yani abnormal)
 		if (status != 0){
 			System.out.println("Error: invalid status");
 			System.exit(1);
 		}
 
-		// exclusive OR
+		// EXCLUSIVE OR ^ *******************************************************************************************
 		if (adadefloat % 2 == 0 ^ adadefloat % 3 ==0){
-			System.out.println(adadefloat + "is divisible by 2 or 3, but not divisible by both");
+			System.out.println(adadefloat + " is divisible by 2 or 3, but not divisible by both");
 		}
 
-		// switch
+		// SWITCH ***************************************************************************************************
 		switch ((int)adadefloat){
 		case (7): System.out.println(adadefloat + " is 7"); break;
 		case (2): System.out.println(adadefloat + " is 2"); break;
 		default: System.out.println(adadefloat + " is neither 7 nor 2");
 		}
 
-		// one line if else		
+		// INLINE IF STATEMENT ELSE *********************************************************************************
 		boolean y = (adadefloat > 0) ? true: false; 		
-
 		System.out.println(y);
-
-
 
 		// formatting the output in the console
 		int adadeInt = 83;
