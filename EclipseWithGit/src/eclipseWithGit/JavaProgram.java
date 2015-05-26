@@ -11,42 +11,40 @@ public class JavaProgram {
 
 	public static void main(String[] args){
 
-		// OUTPUT	// dialog box pop-on with a message
-		JOptionPane.showMessageDialog(null, "in ham ye message e dige st too dialog box");
-		JOptionPane.showMessageDialog(null, "in ye message e dige too Dialog box", "in ham ye title baraye Dialog box", JOptionPane.INFORMATION_MESSAGE);
-		JOptionPane.showMessageDialog(null, "ye adad beyne 0-10 benevis. Ba'desh bedoone enter zadan ye word benevis. Ba'desh ye khat chiz miz benevis");
-		
-		// INPUT	
+		// OUTPUT ***********************************************************	// dialog box pop-on with a message
+		JOptionPane.showMessageDialog(null, "ye message too dialog box");
+		// JOptionPane.showMessageDialog(null, "ye message e dige too Dialog box", "Title e dialogBox emoon", JOptionPane.INFORMATION_MESSAGE);
+		// JOptionPane.showMessageDialog(null, "ye adad beyne 0-10 benevis. Ba'desh bedoone enter zadan ye word benevis. Ba'desh ye khat chiz miz benevis");
+		System.out.println("ye adad beyne 0-10 benevis. Ba'desh bedoone enter zadan ye word benevis. Ba'desh ye khat chiz miz benevis: \n");
+
+		// INPUT *************************************************************************************************	
 		Scanner input = new Scanner(System.in);
 		double adad = input.nextDouble();	// to read a Double adad
 		JOptionPane.showMessageDialog(null, adad);	// show what iput we got for the user
-		
+
 		String word = input.next();			// input a String
 		String line1 = input.nextLine();	// input a line of Strings
 		JOptionPane.showMessageDialog(null, word);
 		JOptionPane.showMessageDialog(null, line1);
-		
-		input.close();						// Close the scanner input to prevent resource leak
-			
-		
-		
-		// Casting
+//		input.close();						// Close the scanner input to prevent resource leak
+
+		// CASTING ***********************************************************************************************
 		System.out.println( (int)4.7 );
 
-/*
-		char letter = 'A';
+		char letter1 = 'A';
 		String letter2 = "A";
-		char letter3 = '\u0041';
-		char letter4 = '\u6B22';
-		char letter5 = '\u8FCE';
-		char letter6 = '\u03b3';
 
-		char alef = '\u0627';
-		char mim = '\u0645';
+		char letter3 = '\u0041';
+		char letter4 = '\u6B22';	// Chinese characters
+		char letter5 = '\u8FCE'; 
+		char letter6 = '\u03b3';	// Greek character
+
+		char alef = '\u0627';	// Persian letters
+		char mim = '\u0645';	
 		char ye = '\u0649';
 		char re = '\u0631';
 
-		System.out.println(letter);
+		System.out.println(letter1);
 		System.out.println(letter2);
 		System.out.println(letter3);
 		System.out.println(letter4);
@@ -57,20 +55,19 @@ public class JavaProgram {
 		System.out.println(ye);
 		System.out.println(re);
 
-		JOptionPane.showMessageDialog(null, re);
-*/
+		String amir = new String();		// benevis Amir :D
+		amir = Character.toString(alef) + Character.toString(mim) + Character.toString(ye) + Character.toString(re);	// convert a Character to String
+		System.out.println(amir);
+		JOptionPane.showMessageDialog(null, amir);
 
-//		JOptionPane.showInputDialog("ye adadi benevis inja:");
-//		String adadGUI = JOptionPane.showInputDialog("ye adadi inja benevis:");
-/*		String khatGUI = JOptionPane.showInputDialog(null, "ye chizi inja benevis", "ye title ei chizi ham injast", JOptionPane.QUESTION_MESSAGE);
-
+		// input in GUI ******************************************************************************************
+		String khatGUI = JOptionPane.showInputDialog(null, "enter some text", "Input box title here", JOptionPane.QUESTION_MESSAGE);
 		JOptionPane.showMessageDialog(null, khatGUI, khatGUI, JOptionPane.QUESTION_MESSAGE);
-*/
+		JOptionPane.showMessageDialog(null, khatGUI);
 
-/*		
-		float adadefloat = input.nextFloat();
+		// IF STATEMENT ******************************************************************************************
 		
-		// if else
+		float adadefloat = input.nextFloat();
 		if (adadefloat > 7){
 			System.out.println("bozorgtar az 7 eh");
 		}
@@ -80,52 +77,54 @@ public class JavaProgram {
 		else {
 			System.out.println("mosaavi e 7 eh");
 		}
-		
-		// one line check kardan o assign kardan e true ya false boodane ye chizi
+
+		// INLINE True/False check BOOLEAN ************************************************************************
 		boolean even = adadefloat % 7 == 0;
 		System.out.println(even);
 
+		// Generate a RANDOM NUMBER *******************************************************************************
 		// Math.random() returns a double value between 0.0 and 1.0, but not 1.0		
 		float randomNumber1 = (float)(Math.random());
 		float randomNumber2 = (float)(Math.random());
-
 		// to get a random number between 0 and 10 
 		int randomNumber3 = (int)(Math.random() * 10);
-
 		System.out.println(randomNumber1 + "\n");
 		System.out.println(randomNumber2);
 		System.out.println(randomNumber3);
-		
-		// baazi :D
+		// generate 10 random numbers
 		for (int i = 0; i < 10; i++){
 			int randomNumber4 = (int)(Math.random() * 10);
 			System.out.println(randomNumber4);
 		}
+
+		// EXIT STATUS (Normal vs. Abnormal) ***********************************************************************
 		
-		// System.exit(status)
-		// age status 0 bedim, yani normal. age gheyre 0 bedim, yani abnormal
-		if (1 != 1){
+		int status = 0;
+		System.exit(status);		// age status 0 bedim, yani normal. (gheyre 0 bedim yani abnormal)
+		
+
+		if (status != 0){
 			System.out.println("Error: invalid status");
 			System.exit(1);
 		}
-		
+
 		// exclusive OR
 		if (adadefloat % 2 == 0 ^ adadefloat % 3 ==0){
 			System.out.println(adadefloat + "is divisible by 2 or 3, but not divisible by both");
 		}
-		
+
 		// switch
 		switch ((int)adadefloat){
-			case (7): System.out.println(adadefloat + " is 7"); break;
-			case (2): System.out.println(adadefloat + " is 2"); break;
-			default: System.out.println(adadefloat + " is neither 7 nor 2");
+		case (7): System.out.println(adadefloat + " is 7"); break;
+		case (2): System.out.println(adadefloat + " is 2"); break;
+		default: System.out.println(adadefloat + " is neither 7 nor 2");
 		}
 
 		// one line if else		
 		boolean y = (adadefloat > 0) ? true: false; 		
 
 		System.out.println(y);
-		
+
 
 
 		// formatting the output in the console
@@ -138,7 +137,7 @@ public class JavaProgram {
 
 		// float 2.4 yani 2 ta adad ghable . (including the decimal point .), va 4 ta adad ba'de .
 		System.out.printf("in format shodeh st %2.4f \n", adadefloat);
-		
+
 		// decimal
 		System.out.printf("in format shodeh st %d \n", adadeInt);
 		System.out.printf("in format shodeh st %5d \n" , adadeInt);
@@ -156,13 +155,13 @@ public class JavaProgram {
 		// string		
 		System.out.printf("in format shodeh st %s \n", adadeString);
 		System.out.printf("in format shodeh st %12s \n", adadeString);
-		
+
 		System.out.printf("%8d%50s%8.1f\n", 12345, "Amirhosein the great programmer", 6.01);
 		System.out.printf("%8d%50s%8.1f\n", 12, "Amirhosein Azarbakht programmer e khafan", 677.01);
 		System.out.printf("%8d%50s%8.1f\n", 1345, "Amirhosein the programmer", 6.01);
 		System.out.printf("%8d%50s%8.1f\n", 1002345, "Amirhosein the skilled programmer", 6.4401);
 		System.out.printf("%8d%50s%8.1f\n", 1, "Amirhosein the programming go-to", 6.091);
-			
+
 		String email = input.nextLine();
 		int answer = JOptionPane.showConfirmDialog(null, "Are you sure is this what you want?" + email);
 		if (answer == JOptionPane.YES_OPTION){
@@ -175,11 +174,11 @@ public class JavaProgram {
 			System.out.println("You said Cancel " + answer);		
 		}
 
-		
+
 		// to redirect input text from a file:
 		// java JavaProgram < text.txt 
 
-		
+
 		int sentinel = 1;
 		// while
 		while (sentinel < 10){
@@ -194,7 +193,7 @@ public class JavaProgram {
 			sentinel++;		
 		} while (sentinel < 10);
 
-		
+
 		// for loop
 		for (int i = 0; i < 10; i++){
 			System.out.printf("in i e #%d eh \n", i);
@@ -208,7 +207,7 @@ public class JavaProgram {
 				break;			
 			}
 		}
-		
+
 		// continue; mippare tahe loop
 		// continue breaks out of the current iteration in the loop,
 		// break breaks out of the loop
@@ -229,9 +228,9 @@ public class JavaProgram {
 		for(int i = 0; i < array.length; i++){
 			System.out.printf("%5.0f \n", array[i]);
 		}
-		
+
 		System.out.println("size of the array is " + array.length);
-		
+
 		// for-each loop: to traverse the array sequentially without using an index
 		for (double elementTooyeList: array){
 			System.out.printf("ba for-each loop injorieh:  %5.0f \n", elementTooyeList);
@@ -244,27 +243,27 @@ public class JavaProgram {
 		for (double elementsInArray2: array2){
 			System.out.printf("in ham element haye array2 ke copy shode az array: %5.0f \n", elementsInArray2);
 		}
-		
-		
+
+
 		// java.util.Arrays class provides sort and binarySearch routines
-		
+
 		// Binary search		
 		double[] array3 = {6.0, 4.4, 9.1, 0.3, 55.0, 124.0};
 		int indexeItem1 = Arrays.binarySearch(array3, 9.1);
 		System.out.println(indexeItem1 + "\n");
-		
+
 		char[] array4 = {'a', 'l', 'i', 't', 'r', 'g', 'f'};
 		int indexeItem2 = Arrays.binarySearch(array4, 'a');
 		int indexeItem3 = Arrays.binarySearch(array4, 't');
 		System.out.println(indexeItem2 + "\n");		
 		System.out.println(indexeItem3 + "\n");
-		
+
 		// sort	
 		Arrays.sort(array3);
 		for(double item: array3){
 			System.out.printf("%2.2f \n", item);
 		}
-	
+
 		Arrays.sort(array4);
 		for(char item: array4){
 			System.out.printf("%c \n", item);		
@@ -272,11 +271,11 @@ public class JavaProgram {
 
 		// equal arrays?
 		System.out.printf("it's %b that array and array3 are equal. \n", Arrays.equals(array, array3));
-		
+
 		// array to String
 		System.out.printf("%s \n", Arrays.toString(array3));
-		
-		
+
+
 		// two-dimentional array
 		int[][] matrix = new  int[10][10];
 		for (int row = 0; row < matrix.length; row++){
@@ -284,7 +283,7 @@ public class JavaProgram {
 				matrix[row][column] = (int)(Math.random() * 100);
 			}
 		}
-		
+
 		for (int row = 0; row < matrix.length; row++){
 			for(int column = 0; column < matrix[row].length; column++){
 				System.out.printf("%4d ", matrix[row][column]);
@@ -315,26 +314,26 @@ public class JavaProgram {
 
 		// Button e clickable
 		JButton jbtOK = new JButton("Amirhosein programmer e khafan injast :D");
-		
+
 		// Label ya hamoon text baraye har chizi roo GUI
 		JLabel jlbl = new JLabel("This is a label! na baba?!");
-		
+
 		// Text field ke mishe nevesht toosh, albate toosh neveshte ham dare
 		JTextField jtfName = new JTextField("inam ye text eh");
-		
+
 		// Check Box e tik khordani
 		JCheckBox jchkIranian = new JCheckBox("Iranian");
 		JCheckBox jchkSwedish = new JCheckBox("Swedish");
 		JCheckBox jchkAmerican = new JCheckBox("American");
 		JCheckBox jchkCanadian = new JCheckBox("Canadian");
-		
+
 		// Radio Button e entekhab kardani
 		JRadioButton jrbMale = new JRadioButton("Male");
 		JRadioButton jrbFemale = new JRadioButton("Female");
-		
+
 		// Combo Box ke drop down ei, ke entekhab koni az toosh beyne gozineha sh
 		JComboBox jcboxCollegeYear = new JComboBox(new String[] {"Freshman", "Sophomore", "Junior", "Senior"});
-		
+
 		// Panel
 		JPanel panel = new JPanel();
 		panel.add(jbtOK);
@@ -355,30 +354,30 @@ public class JavaProgram {
 		frame3.setLocation(200, 400);
 		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame3.setVisible(true);
-		
-		frame3.add(panel);
-*/
 
-/*		
+		frame3.add(panel);
+
+
+		/*		
 		// StringBuilder: mesle String eh, + inke mishe tagheiresh dad o append kard behesh o ina. immutable nist
 		StringBuilder stringBuilder = new StringBuilder();
 		String stringB = input.nextLine();		
 		stringBuilder.append(stringB);
 		System.out.println(stringBuilder + "\n");
 		System.out.println(stringBuilder.reverse() + "\n");
-*/
+		 */
 
-/*
+		/*
 		// MAX_VALUE of an int, float, long, double		
 		System.out.println("\n The maximum value of an int is: " + Integer.MAX_VALUE);
 		System.out.printf("\n The maximum value of an float is: %100.100e", Float.MAX_VALUE);
 		System.out.printf("\n The maximum value of an double is: %100.100e", Double.MAX_VALUE);
 		System.out.println("\n The maximum value of an long is: " + Long.MAX_VALUE);
 		System.out.println("\n The maximum value of an short is: " + Short.MAX_VALUE);
-*/
+		 */
 
 
-/*
+		/*
 		// convert a decimal to hexadecimal
 		System.out.println(String.format("%x", 255) + "\n");
 		// convert a decimal to octal		
@@ -394,11 +393,11 @@ public class JavaProgram {
 		// convert an octal to int
 		System.out.println(Integer.parseInt("77", 8) + "\n");
 
-		
+
 		// Array vs. ArrayList
 		// Array is fixed size. Static Array.
 		// ArrayList is unlimited size. Dynamic Array eh.
-	
+
 		ArrayList<String> cityList = new ArrayList<>();
 		cityList.add("Tehran");
 		cityList.add("Rome");
@@ -425,7 +424,7 @@ public class JavaProgram {
 		System.out.println("cityList contains Rome? " + cityList.contains("Rome") + "\n");		
 		System.out.println("cityList index of New York: " + cityList.indexOf("New York") + "\n");		
 		System.out.println("cityList at index 2: " + cityList.get(2) + "\n");		
-		
+
 		System.out.println("====================" + "\n");
 		for(int i = 0; i < cityList.size(); i++){
 			System.out.println(cityList.get(i) + "\n");		
@@ -434,7 +433,7 @@ public class JavaProgram {
 
 		cityList.remove("Stockholm, Sweden");		
 		cityList.remove(0);		
-		
+
 		System.out.println("====================" + "\n");
 		for(int i = 0; i < cityList.size(); i++){
 			System.out.println(cityList.get(i) + "\n");		
@@ -443,13 +442,13 @@ public class JavaProgram {
 
 		// print the entire ArrayList
 		System.out.println(cityList.toString() + "\n");
-*/
+		 */
 
 
-/*
-		
+		/*
+
 		JFrame frame = new JFrame();
-		
+
 		// Flow Layout		
 //		frame.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
 
@@ -477,12 +476,12 @@ public class JavaProgram {
 		frame.setVisible(true);
 
 
-*/
+		 */
 
 
-/*		
+		/*		
 		JFrame frame = new JFrame();
-		
+
 		// Border Layout
 //		frame.setLayout(new BorderLayout());
 		frame.setLayout(new BorderLayout(8, 8));
@@ -500,48 +499,48 @@ public class JavaProgram {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
-		
+
 		// ye jooriayi, GradLayout is better than the other ones.
 
-*/
+		 */
 
 		// Frame
 		JFrame frame = new JFrame();
-		
+
 		// Panel
 		JPanel panel1 = new JPanel();
 		JPanel panel2 = new JPanel();
 		JPanel panel3 = new JPanel();
 		NewPanel panel4 = new NewPanel();
-		
+
 		// Layout
 		panel1.setLayout(new BorderLayout(10, 10));
 		panel2.setLayout(new GridLayout(3, 3));
 		panel3.setLayout(new GridLayout(1, 4));	
-// 		panel4.setLayout(new BorderLayout(10, 10));			
-	
+		// 		panel4.setLayout(new BorderLayout(10, 10));			
+
 		// Border
 		panel1.setBorder(new TitledBorder("Title e in :D"));
 		panel2.setBorder(new LineBorder(Color.BLACK, 2));
 		panel3.setBorder(new TitledBorder("Country Flags"));		
 		panel4.setBorder(new TitledBorder("Graphic baazi"));		
-	
+
 		// Cursor
 		panel1.setCursor(new Cursor(Cursor.TEXT_CURSOR));		
 		panel2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		panel3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		panel4.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
-		
-		
+
+
 		for(int i = 1; i <= 9; i++){
 			panel2.add(new JButton("" + i));
 		}
-	
-		JLabel jlbl = new JLabel("Amirhosein shaakh eh too Programming");
+
+		JLabel jlbl1 = new JLabel("Amirhosein shaakh eh too Programming");
 		// Tool Tip Text		
 		jlbl.setToolTipText("inam tool tip e ineh");
-		panel1.add(jlbl, BorderLayout.CENTER);
-		
+		panel1.add(jlbl1, BorderLayout.CENTER);
+
 		// ImageIcon
 		ImageIcon icon = new ImageIcon("/home/aha/Downloads/famfamfam_flag_icons/png/us.png");
 		JLabel iconLabel = new JLabel(icon);
@@ -552,13 +551,13 @@ public class JavaProgram {
 		panel1.add(panel4, BorderLayout.NORTH);
 
 		frame.add(panel1);
-	
+
 		// Image Icons country flags
-		ImageIcon irFlag = new ImageIcon("/home/aha/Downloads/famfamfam_flag_icons/png/ir.png");
-		ImageIcon seFlag = new ImageIcon("/home/aha/Downloads/famfamfam_flag_icons/png/se.png");
-		ImageIcon usFlag = new ImageIcon("/home/aha/Downloads/famfamfam_flag_icons/png/us.png");
-		ImageIcon caFlag = new ImageIcon("/home/aha/Downloads/famfamfam_flag_icons/png/ca.png");
-		
+		ImageIcon irFlag = new ImageIcon("/home/aha/Desktop/programming/flags/ir.png");
+		ImageIcon seFlag = new ImageIcon("/home/aha/Desktop/programming/flags/se.png");
+		ImageIcon usFlag = new ImageIcon("/home/aha/Desktop/programming/flags/us.png");
+		ImageIcon caFlag = new ImageIcon("/home/aha/Desktop/programming/flags/ca.png");
+
 		JButton irButton = new JButton("Iran", irFlag);
 		JButton seButton = new JButton("Sweden", seFlag);
 		JButton usButton = new JButton("United States", usFlag);
@@ -572,10 +571,10 @@ public class JavaProgram {
 		// Pressed Icon
 		irButton.setPressedIcon(usFlag);
 		caButton.setPressedIcon(usFlag);
-		
+
 		// Rollover Icon
 		seButton.setRolloverIcon(usFlag);
-		
+
 
 		// Title
 		frame.setTitle("in ye title eh");	
@@ -588,7 +587,7 @@ public class JavaProgram {
 		// Visible		
 		frame.setVisible(true);
 
-		
+
 	} // main method
 
 } // JavaProgram class
