@@ -2,10 +2,10 @@ package eclipseWithGit;
 
 import javax.swing.*;
 import javax.swing.border.*;
-import java.util.Scanner;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
+
 import java.util.*;
 import java.awt.*;
-import java.awt.Graphics;
 
 public class JavaProgram {
 
@@ -20,9 +20,11 @@ public class JavaProgram {
 		// INPUT *************************************************************************************************	
 		Scanner input = new Scanner(System.in);
 		double adad = input.nextDouble();	// to read a Double adad
+		input.nextLine();	// add this after every input nextInt, nextDouble, etc. to consume the trailing \n that they leave behind and will become problematic down the line in the program next time you're using nextLine
 		JOptionPane.showMessageDialog(null, adad);	// show what iput we got for the user
 
 		String word = input.next();			// input a String
+		input.nextLine();
 		String line1 = input.nextLine();	// input a line of Strings
 		JOptionPane.showMessageDialog(null, word);
 		JOptionPane.showMessageDialog(null, line1);
@@ -68,7 +70,7 @@ public class JavaProgram {
 		// IF STATEMENT ******************************************************************************************
 		System.out.println("Enter a number, and we'll tell you if it's greater or less than 7: ");
 		float adadefloat = input.nextFloat();
-		input.close();
+		input.nextLine();
 		if (adadefloat > 7){
 			System.out.println(adadefloat + " bozorgtar az 7 eh");
 		}
@@ -121,12 +123,18 @@ public class JavaProgram {
 		case (2): System.out.println(adadefloat + " is 2"); break;
 		default: System.out.println(adadefloat + " is neither 7 nor 2");
 		}
+		
+		switch((int)adadefloat){
+		case(7): System.out.println(adadefloat + " is 7"); break;
+		case (2): System.out.println(adadefloat + " is 2"); break;
+		default: System.out.println(adadefloat + " is neither 2 nor 7");
+		}
 
 		// INLINE IF STATEMENT ELSE *********************************************************************************
 		boolean y = (adadefloat > 0) ? true: false; 		
 		System.out.println(y);
 
-		// formatting the output in the console
+		// OUTPUT FORMATTING ****************************************************************************************
 		int adadeInt = 83;
 		char adadeChar = 'a';
 		String adadeString = "salaam salaam in Amirhosein Azarbakht, programmer e khafan eh!";
@@ -135,7 +143,7 @@ public class JavaProgram {
 		System.out.printf("in format nashode st %f", adadefloat);
 
 		// float 2.4 yani 2 ta adad ghable . (including the decimal point .), va 4 ta adad ba'de .
-		System.out.printf("in format shodeh st %2.4f \n", adadefloat);
+		System.out.printf("\n in format shodeh st %2.4f \n", adadefloat);
 
 		// decimal
 		System.out.printf("in format shodeh st %d \n", adadeInt);
@@ -161,7 +169,10 @@ public class JavaProgram {
 		System.out.printf("%8d%50s%8.1f\n", 1002345, "Amirhosein the skilled programmer", 6.4401);
 		System.out.printf("%8d%50s%8.1f\n", 1, "Amirhosein the programming go-to", 6.091);
 
+		// CONFIRMATION DIALOG BOX ***********************************************************************************
+		System.out.println("Enter an email address: \n");
 		String email = input.nextLine();
+		
 		int answer = JOptionPane.showConfirmDialog(null, "Are you sure is this what you want?" + email);
 		if (answer == JOptionPane.YES_OPTION){
 			System.out.println("You said Yes " + answer);
@@ -173,11 +184,11 @@ public class JavaProgram {
 			System.out.println("You said Cancel " + answer);		
 		}
 
-
-		// to redirect input text from a file:
+		
+		// to redirect input text from a file: ************************************************************************
 		// java JavaProgram < text.txt 
 
-
+		
 		int sentinel = 1;
 		// while
 		while (sentinel < 10){
