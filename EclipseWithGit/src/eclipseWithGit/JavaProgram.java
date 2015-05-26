@@ -3,7 +3,6 @@ package eclipseWithGit;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
-
 import java.util.*;
 import java.awt.*;
 
@@ -17,19 +16,20 @@ public class JavaProgram {
 		// JOptionPane.showMessageDialog(null, "ye adad beyne 0-10 benevis. Ba'desh bedoone enter zadan ye word benevis. Ba'desh ye khat chiz miz benevis");
 		System.out.println("ye adad beyne 0-10 benevis. Ba'desh bedoone enter zadan ye word benevis. Ba'desh ye khat chiz miz benevis: \n");
 
+		
 		// INPUT *************************************************************************************************	
 		Scanner input = new Scanner(System.in);
 		double adad = input.nextDouble();	// to read a Double adad
-		input.nextLine();	// add this after every input nextInt, nextDouble, etc. to consume the trailing \n that they leave behind and will become problematic down the line in the program next time you're using nextLine
+		// input.nextLine();	// add this after every input nextInt, nextDouble, etc. to consume the trailing \n that they leave behind and will become problematic down the line in the program next time you're using nextLine
 		JOptionPane.showMessageDialog(null, adad);	// show what iput we got for the user
 
 		String word = input.next();			// input a String
-		input.nextLine();
 		String line1 = input.nextLine();	// input a line of Strings
 		JOptionPane.showMessageDialog(null, word);
 		JOptionPane.showMessageDialog(null, line1);
 //		input.close();						// Close the scanner input to prevent resource leak
 
+		
 		// CASTING ***********************************************************************************************
 		System.out.println( (int)4.7 );
 
@@ -62,11 +62,13 @@ public class JavaProgram {
 		System.out.println(amir);
 		JOptionPane.showMessageDialog(null, amir);
 
+		
 		// input in GUI ******************************************************************************************
 		String khatGUI = JOptionPane.showInputDialog(null, "enter some text", "Input box title here", JOptionPane.QUESTION_MESSAGE);
 		JOptionPane.showMessageDialog(null, khatGUI, khatGUI, JOptionPane.QUESTION_MESSAGE);
 		JOptionPane.showMessageDialog(null, khatGUI);
 
+		
 		// IF STATEMENT ******************************************************************************************
 		System.out.println("Enter a number, and we'll tell you if it's greater or less than 7: ");
 		float adadefloat = input.nextFloat();
@@ -81,6 +83,7 @@ public class JavaProgram {
 			System.out.println(adadefloat + " mosaavi e 7 eh");
 		}
 
+		
 		// INLINE True/False check BOOLEAN ************************************************************************
 		boolean even = adadefloat % 2 == 0;
 		if(even == true){
@@ -89,6 +92,7 @@ public class JavaProgram {
 			System.out.println(adadefloat + " is an odd number");
 		}
 
+		
 		// Generate a RANDOM NUMBER *******************************************************************************
 		// Math.random() returns a double value between 0.0 and 1.0, but not 1.0		
 		float randomNumber1 = (float)(Math.random());
@@ -104,6 +108,7 @@ public class JavaProgram {
 			System.out.println(randomNumber4);
 		}
 
+		
 		// EXIT STATUS (Normal vs. Abnormal) ***********************************************************************
 		int status = 0;
 		// be System.exit(status); age status 0 bedim, yani normal. (gheyre 0 bedim yani abnormal)
@@ -112,11 +117,13 @@ public class JavaProgram {
 			System.exit(1);
 		}
 
+		
 		// EXCLUSIVE OR ^ *******************************************************************************************
 		if (adadefloat % 2 == 0 ^ adadefloat % 3 ==0){
 			System.out.println(adadefloat + " is divisible by 2 or 3, but not divisible by both");
 		}
 
+		
 		// SWITCH ***************************************************************************************************
 		switch ((int)adadefloat){
 		case (7): System.out.println(adadefloat + " is 7"); break;
@@ -129,11 +136,13 @@ public class JavaProgram {
 		case (2): System.out.println(adadefloat + " is 2"); break;
 		default: System.out.println(adadefloat + " is neither 2 nor 7");
 		}
+		
 
 		// INLINE IF STATEMENT ELSE *********************************************************************************
 		boolean y = (adadefloat > 0) ? true: false; 		
 		System.out.println(y);
 
+		
 		// OUTPUT FORMATTING ****************************************************************************************
 		int adadeInt = 83;
 		char adadeChar = 'a';
@@ -169,48 +178,49 @@ public class JavaProgram {
 		System.out.printf("%8d%50s%8.1f\n", 1002345, "Amirhosein the skilled programmer", 6.4401);
 		System.out.printf("%8d%50s%8.1f\n", 1, "Amirhosein the programming go-to", 6.091);
 
-		// CONFIRMATION DIALOG BOX ***********************************************************************************
+		
+		// CONFIRMATION INPUT DIALOG BOX ***********************************************************************************
 		System.out.println("Enter an email address: \n");
 		String email = input.nextLine();
-		
-		int answer = JOptionPane.showConfirmDialog(null, "Are you sure is this what you want?" + email);
+		int answer = JOptionPane.showConfirmDialog(null, "Are you sure this is what you want? " + email);
 		if (answer == JOptionPane.YES_OPTION){
-			System.out.println("You said Yes " + answer);
+			System.out.println("You said Yes, " + email);
 		}
 		else if (answer == JOptionPane.NO_OPTION){
-			System.out.println("You said No " + answer);	
+			System.out.println("You said No, " + email);	
 		}
 		else if (answer == JOptionPane.CANCEL_OPTION){
-			System.out.println("You said Cancel " + answer);		
+			System.out.println("You said Cancel, " + email);		
 		}
 
 		
 		// to redirect input text from a file: ************************************************************************
 		// java JavaProgram < text.txt 
-
 		
+		
+		// WHILE LOOP *************************************************************************************************
 		int sentinel = 1;
-		// while
 		while (sentinel < 10){
 			System.out.printf("in Sentinel e #%d eh \n", sentinel);
 			sentinel++;
 		}
 
+		
+		// DO WHILE LOOP **********************************************************************************************
 		sentinel = 1;
-		// do while
 		do{
 			System.out.printf("in Sentinel e #%d eh \n", sentinel);
 			sentinel++;		
 		} while (sentinel < 10);
 
-
-		// for loop
+		
+		// FOR LOOP ****************************************************************************************************
 		for (int i = 0; i < 10; i++){
 			System.out.printf("in i e #%d eh \n", i);
 		}
 
-
-		// break; mippare are loop biroon
+		
+		// BREAK; to break OUT of a LOOP; mippare az loop biroon *******************************************************
 		for (int i = 0; i < 10; i++){
 			System.out.printf("in break e #%d eh \n", i);
 			if (i == 5){
@@ -218,8 +228,9 @@ public class JavaProgram {
 			}
 		}
 
-		// continue; mippare tahe loop
-		// continue breaks out of the current iteration in the loop,
+		
+		// CONTINUE; jumps to the END of the LOOP; mippare tahe loop ***************************************************
+		// continue breaks out of the CURRENT ITERATION in the loop; SKIPS just ONE iteration!!
 		// break breaks out of the loop
 		for (int i = 0; i < 10; i++){
 			if (i == 5){
@@ -228,8 +239,8 @@ public class JavaProgram {
 			System.out.printf("in continue e #%d eh \n", i);
 		}
 
-
-		// array
+		
+		// ARRAYS *******************************************************************************************************
 		double[] array = new double[5];
 		for(int i = 0; i < 5; i++){
 			array[i] = input.nextDouble();
@@ -238,10 +249,11 @@ public class JavaProgram {
 		for(int i = 0; i < array.length; i++){
 			System.out.printf("%5.0f \n", array[i]);
 		}
-
+		
 		System.out.println("size of the array is " + array.length);
 
-		// for-each loop: to traverse the array sequentially without using an index
+		
+		// FOR-EACH LOOP: to traverse the array sequentially without using an index **************************************
 		for (double elementTooyeList: array){
 			System.out.printf("ba for-each loop injorieh:  %5.0f \n", elementTooyeList);
 		}
