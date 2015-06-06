@@ -242,34 +242,31 @@ public class JavaProgram {
 		
 		// ARRAYS *******************************************************************************************************
 		double[] array = new double[5];
+
 		for(int i = 0; i < 5; i++){
+			System.out.println("\n Enter a number: ");
 			array[i] = input.nextDouble();
 		}
-
 		for(int i = 0; i < array.length; i++){
 			System.out.printf("%5.0f \n", array[i]);
 		}
-		
-		System.out.println("size of the array is " + array.length);
+		System.out.println("Size of this array is " + array.length);
 
-		
-		// FOR-EACH LOOP: to traverse the array sequentially without using an index **************************************
+		// FOR-EACH LOOP to access ARRAY elements: to traverse the array sequentially without using an index *************
 		for (double elementTooyeList: array){
 			System.out.printf("ba for-each loop injorieh:  %5.0f \n", elementTooyeList);
 		}
 
-		// to copy an array
+		// COPY an ARRAY *************************************************************************************************
 		double[] array2 = new double[5];
 		System.arraycopy(array, 0, array2, 0, array.length);
-
 		for (double elementsInArray2: array2){
 			System.out.printf("in ham element haye array2 ke copy shode az array: %5.0f \n", elementsInArray2);
 		}
 
+		// BINARY SEARCH **************************************************************************************************
+		// SORT and BINARY SEARCH; java.util.Arrays class provides sort and binarySearch routines
 
-		// java.util.Arrays class provides sort and binarySearch routines
-
-		// Binary search		
 		double[] array3 = {6.0, 4.4, 9.1, 0.3, 55.0, 124.0};
 		int indexeItem1 = Arrays.binarySearch(array3, 9.1);
 		System.out.println(indexeItem1 + "\n");
@@ -280,7 +277,7 @@ public class JavaProgram {
 		System.out.println(indexeItem2 + "\n");		
 		System.out.println(indexeItem3 + "\n");
 
-		// sort	
+		// SORT ************************************************************************************************************
 		Arrays.sort(array3);
 		for(double item: array3){
 			System.out.printf("%2.2f \n", item);
@@ -294,11 +291,10 @@ public class JavaProgram {
 		// equal arrays?
 		System.out.printf("it's %b that array and array3 are equal. \n", Arrays.equals(array, array3));
 
-		// array to String
+		// Array to String
 		System.out.printf("%s \n", Arrays.toString(array3));
 
-
-		// two-dimentional array
+		// TWO-DIMENSIONAL ARRAY ********************************************************************************************
 		int[][] matrix = new  int[10][10];
 		for (int row = 0; row < matrix.length; row++){
 			for(int column = 0; column < matrix[row].length; column++){
@@ -314,21 +310,25 @@ public class JavaProgram {
 		}
 
 
-		// Date 
+		// DATE and TIME *****************************************************************************************************
 		Date date = new Date();
 		System.out.printf("%s \n", date.getTime());
 		System.out.printf("%s \n", date.toString());
 
-		// GUI e saadeh		
+		
+		// GUI ***************************************************************************************************************
+		
+		// FRAME: create a frame from JFrame in SWING package; javax.swing.JFrame;
 		JFrame frame1 = new JFrame();
-		frame1.setTitle("title e in frame eh");
+		frame1.setTitle("Frame1 Title");
 		frame1.setSize(200, 150);
 		frame1.setLocation(200,100);
 		frame1.setVisible(true);
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		
+		// create a second frame
 		JFrame frame2 = new JFrame();
-		frame2.setTitle("title e in frame dovvomi eh");
+		frame2.setTitle("Frame2 Title");
 		frame2.setSize(200, 150);
 		frame2.setLocation(410,100);
 		frame2.setVisible(true);
@@ -356,7 +356,7 @@ public class JavaProgram {
 		// Combo Box ke drop down ei, ke entekhab koni az toosh beyne gozineha sh
 		JComboBox jcboxCollegeYear = new JComboBox(new String[] {"Freshman", "Sophomore", "Junior", "Senior"});
 
-		// Panel
+		// PANEL **************************************************************************************************
 		JPanel panel = new JPanel();
 		panel.add(jbtOK);
 		panel.add(jlbl);
@@ -377,38 +377,39 @@ public class JavaProgram {
 		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame3.setVisible(true);
 
+		// ADD PANEL TO THE FRAME
 		frame3.add(panel);
+		
+		// END OF GUI stuff
 
-
-		/*		
-		// StringBuilder: mesle String eh, + inke mishe tagheiresh dad o append kard behesh o ina. immutable nist
+		
+		// STRINGBUILDER *******************************************************************************************
+		// StringBuilder: mesle String eh + inke mishe tagheiresh dad o append kard behesh o ina. immutable nist
 		StringBuilder stringBuilder = new StringBuilder();
 		String stringB = input.nextLine();		
 		stringBuilder.append(stringB);
 		System.out.println(stringBuilder + "\n");
 		System.out.println(stringBuilder.reverse() + "\n");
-		 */
 
-		/*
-		// MAX_VALUE of an int, float, long, double		
+		
+		// MAX_VALUE of an int, float, long, double ****************************************************************
 		System.out.println("\n The maximum value of an int is: " + Integer.MAX_VALUE);
 		System.out.printf("\n The maximum value of an float is: %100.100e", Float.MAX_VALUE);
 		System.out.printf("\n The maximum value of an double is: %100.100e", Double.MAX_VALUE);
 		System.out.println("\n The maximum value of an long is: " + Long.MAX_VALUE);
 		System.out.println("\n The maximum value of an short is: " + Short.MAX_VALUE);
-		 */
+		
 
-
-		/*
-		// convert a decimal to hexadecimal
+		// HEX to DECIMAL CONVERSION: convert a decimal to hexadecimal *********************************************
+		// TYPE CONVERSIONS 
 		System.out.println(String.format("%x", 255) + "\n");
-		// convert a decimal to octal		
+		// convert a decimal to OCTAL		
 		System.out.println(String.format("%o", 255) + "\n");
 		//convert a digit String into an int
 		System.out.println(Integer.parseInt("255") + "\n");
 		// string to double
 		System.out.println(Double.parseDouble("255") + "\n");
-		// convert a binary (radix 2; mabnaaye 2) to int
+		// convert a BINARY (radix 2; mabnaaye 2) to int 
 		System.out.println(Integer.parseInt("11111111", 2) + "\n");
 		// convert a hexadecimal (radix 16) to int
 		System.out.println(Integer.parseInt("A", 16) + "\n");
@@ -416,10 +417,8 @@ public class JavaProgram {
 		System.out.println(Integer.parseInt("77", 8) + "\n");
 
 
-		// Array vs. ArrayList
-		// Array is fixed size. Static Array.
-		// ArrayList is unlimited size. Dynamic Array eh.
-
+		// ARRAYLIST *************************************************************************************************************
+		// Array vs. ArrayList: Array is fixed size(Static Array eh), whereas ArrayList is unlimited size (Dynamic Array eh).
 		ArrayList<String> cityList = new ArrayList<>();
 		cityList.add("Tehran");
 		cityList.add("Rome");
@@ -464,95 +463,72 @@ public class JavaProgram {
 
 		// print the entire ArrayList
 		System.out.println(cityList.toString() + "\n");
-		 */
 
 
-		/*
 
-		JFrame frame = new JFrame();
+		// GUI - continued ********************************************************************************************
 
+		JFrame frame4 = new JFrame();
 		// Flow Layout		
-//		frame.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
-
+//		frame4.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
 		// Grid Layout
-//		frame.setLayout(new GridLayout());
-//		frame.setLayout(new GridLayout(3, 2));
-
-
+		frame4.setLayout(new GridLayout());
+		frame4.setLayout(new GridLayout(3, 2));
 		// Border Layout
 //		frame.setLayout(new BorderLayout());
 //		frame.setLayout(new BorderLayout(8, 8));
 		// Border Layout doesn't work by just altering this line. You have to add a BorderLayout.EAST, BorderLayout.WEST, BorderLayout.SOUTH, BorderLayout.NORTH, BorderLayout.CENTER, when adding elements to the frame, in the add lines. 
+		frame4.add(new JLabel("First Name: "));
+		frame4.add(new JTextField(20));
+		frame4.add(new JLabel("MI"));
+		frame4.add(new JTextField(1));
+		frame4.add(new JLabel("Last Name: "));
+		frame4.add(new JTextField(30));
+		frame4.setTitle("in ye title eh");	
+		frame4.setSize(200,200);
+		frame4.setLocationRelativeTo(null);
+		frame4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame4.setVisible(true);
 
-		frame.add(new JLabel("First Name: "));
-		frame.add(new JTextField(20));
-		frame.add(new JLabel("MI"));
-		frame.add(new JTextField(1));
-		frame.add(new JLabel("Last Name: "));
-		frame.add(new JTextField(30));
-
-		frame.setTitle("in ye title eh");	
-		frame.setSize(200,200);
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-
-
-		 */
-
-
-		/*		
-		JFrame frame = new JFrame();
-
+		JFrame frame5 = new JFrame();
 		// Border Layout
-//		frame.setLayout(new BorderLayout());
-		frame.setLayout(new BorderLayout(8, 8));
-
-		frame.add(new JLabel("First Name: "), BorderLayout.NORTH);
+//		frame5.setLayout(new BorderLayout());
+		frame5.setLayout(new BorderLayout(8, 8));
+		frame5.add(new JLabel("First Name: "), BorderLayout.NORTH);
 		// frame.add(new JTextField(20), BorderLayout.NORTH);
-		frame.add(new JLabel("MI"), BorderLayout.WEST);
-		// frame.add(new JTextField(1), BorderLayout.WEST);
-		frame.add(new JLabel("Last Name: "), BorderLayout.SOUTH);
-		// frame.add(new JTextField(30), BorderLayout.SOUTH);
-
-		frame.setTitle("in ye title eh");	
-		frame.setSize(200,200);
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-
-
+		frame5.add(new JLabel("MI"), BorderLayout.WEST);
+		// frame5.add(new JTextField(1), BorderLayout.WEST);
+		frame5.add(new JLabel("Last Name: "), BorderLayout.SOUTH);
+		// frame5.add(new JTextField(30), BorderLayout.SOUTH);
+		frame5.setTitle("in ye title eh");	
+		frame5.setSize(200,200);
+		frame5.setLocationRelativeTo(null);
+		frame5.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame5.setVisible(true);
 		// ye jooriayi, GradLayout is better than the other ones.
 
-		 */
-
 		// Frame
-		JFrame frame = new JFrame();
-
+		JFrame frame6 = new JFrame();
 		// Panel
 		JPanel panel1 = new JPanel();
 		JPanel panel2 = new JPanel();
 		JPanel panel3 = new JPanel();
 		NewPanel panel4 = new NewPanel();
-
 		// Layout
 		panel1.setLayout(new BorderLayout(10, 10));
 		panel2.setLayout(new GridLayout(3, 3));
 		panel3.setLayout(new GridLayout(1, 4));	
 		// 		panel4.setLayout(new BorderLayout(10, 10));			
-
 		// Border
 		panel1.setBorder(new TitledBorder("Title e in :D"));
 		panel2.setBorder(new LineBorder(Color.BLACK, 2));
 		panel3.setBorder(new TitledBorder("Country Flags"));		
 		panel4.setBorder(new TitledBorder("Graphic baazi"));		
-
 		// Cursor
 		panel1.setCursor(new Cursor(Cursor.TEXT_CURSOR));		
 		panel2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		panel3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		panel4.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
-
 
 		for(int i = 1; i <= 9; i++){
 			panel2.add(new JButton("" + i));
@@ -564,7 +540,7 @@ public class JavaProgram {
 		panel1.add(jlbl1, BorderLayout.CENTER);
 
 		// ImageIcon
-		ImageIcon icon = new ImageIcon("/home/aha/Downloads/famfamfam_flag_icons/png/us.png");
+		ImageIcon icon = new ImageIcon("/home/aha/Desktop/programming/flags/us.png");
 		JLabel iconLabel = new JLabel(icon);
 
 		panel1.add(iconLabel, BorderLayout.WEST);
@@ -572,7 +548,7 @@ public class JavaProgram {
 		panel1.add(panel3, BorderLayout.SOUTH);
 		panel1.add(panel4, BorderLayout.NORTH);
 
-		frame.add(panel1);
+		frame6.add(panel1);
 
 		// Image Icons country flags
 		ImageIcon irFlag = new ImageIcon("/home/aha/Desktop/programming/flags/ir.png");
@@ -599,24 +575,22 @@ public class JavaProgram {
 
 
 		// Title
-		frame.setTitle("in ye title eh");	
+		frame6.setTitle("in ye title eh");	
 		// Size		
-		frame.setSize(400,250);
+		frame6.setSize(400,250);
 		// Location		
-		frame.setLocationRelativeTo(null);
+		frame6.setLocationRelativeTo(null);
 		// On Close		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame6.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// Visible		
-		frame.setVisible(true);
-
+		frame6.setVisible(true);
+		// End of GUI-continued
+		
+		
 
 	} // main method
 
 } // JavaProgram class
-
-
-
-
 
 
 
@@ -627,7 +601,7 @@ class NewPanel extends JPanel{
 		// g.drawLine(20, 20, 100, 100);
 		g.drawString("es tring", 20, 50);
 		g.fillRect(20, 20, 100, 100);
-	} // paintComponent Overriden method
+	} // paintComponent Overridden method
 
 } // NewPanel class
 
