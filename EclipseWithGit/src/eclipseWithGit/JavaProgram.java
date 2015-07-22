@@ -16,7 +16,7 @@ public class JavaProgram {
 		// JOptionPane.showMessageDialog(null, "ye adad beyne 0-10 benevis. Ba'desh bedoone enter zadan ye word benevis. Ba'desh ye khat chiz miz benevis");
 		System.out.println("ye adad beyne 0-10 benevis. Ba'desh bedoone enter zadan ye word benevis. Ba'desh ye khat chiz miz benevis: \n");
 
-		
+
 		// INPUT *************************************************************************************************	
 		Scanner input = new Scanner(System.in);
 		double adad = input.nextDouble();	// to read a Double adad
@@ -27,9 +27,13 @@ public class JavaProgram {
 		String line1 = input.nextLine();	// input a line of Strings
 		JOptionPane.showMessageDialog(null, word);
 		JOptionPane.showMessageDialog(null, line1);
-//		input.close();						// Close the scanner input to prevent resource leak
+		//		input.close();						// Close the scanner input to prevent resource leak
 
-		
+		// INPUT from Args *************************************************************************************************	
+		for (int i=0; i < args.length; i++){
+			System.out.printf("args[%d] = %d", i, args[i]);
+		}
+
 		// CASTING ***********************************************************************************************
 		System.out.println( (int)4.7 );
 
@@ -62,13 +66,13 @@ public class JavaProgram {
 		System.out.println(amir);
 		JOptionPane.showMessageDialog(null, amir);
 
-		
+
 		// input in GUI ******************************************************************************************
 		String khatGUI = JOptionPane.showInputDialog(null, "enter some text", "Input box title here", JOptionPane.QUESTION_MESSAGE);
 		JOptionPane.showMessageDialog(null, khatGUI, khatGUI, JOptionPane.QUESTION_MESSAGE);
 		JOptionPane.showMessageDialog(null, khatGUI);
 
-		
+
 		// IF STATEMENT ******************************************************************************************
 		System.out.println("Enter a number, and we'll tell you if it's greater or less than 7: ");
 		float adadefloat = input.nextFloat();
@@ -83,7 +87,7 @@ public class JavaProgram {
 			System.out.println(adadefloat + " mosaavi e 7 eh");
 		}
 
-		
+
 		// INLINE True/False check BOOLEAN ************************************************************************
 		boolean even = adadefloat % 2 == 0;
 		if(even == true){
@@ -92,7 +96,7 @@ public class JavaProgram {
 			System.out.println(adadefloat + " is an odd number");
 		}
 
-		
+
 		// Generate a RANDOM NUMBER *******************************************************************************
 		// Math.random() returns a double value between 0.0 and 1.0, but not 1.0		
 		float randomNumber1 = (float)(Math.random());
@@ -108,7 +112,7 @@ public class JavaProgram {
 			System.out.println(randomNumber4);
 		}
 
-		
+
 		// EXIT STATUS (Normal vs. Abnormal) ***********************************************************************
 		int status = 0;
 		// be System.exit(status); age status 0 bedim, yani normal. (gheyre 0 bedim yani abnormal)
@@ -117,32 +121,32 @@ public class JavaProgram {
 			System.exit(1);
 		}
 
-		
+
 		// EXCLUSIVE OR ^ *******************************************************************************************
 		if (adadefloat % 2 == 0 ^ adadefloat % 3 ==0){
 			System.out.println(adadefloat + " is divisible by 2 or 3, but not divisible by both");
 		}
 
-		
+
 		// SWITCH ***************************************************************************************************
 		switch ((int)adadefloat){
 		case (7): System.out.println(adadefloat + " is 7"); break;
 		case (2): System.out.println(adadefloat + " is 2"); break;
 		default: System.out.println(adadefloat + " is neither 7 nor 2");
 		}
-		
+
 		switch((int)adadefloat){
 		case(7): System.out.println(adadefloat + " is 7"); break;
 		case (2): System.out.println(adadefloat + " is 2"); break;
 		default: System.out.println(adadefloat + " is neither 2 nor 7");
 		}
-		
+
 
 		// INLINE IF STATEMENT ELSE *********************************************************************************
 		boolean y = (adadefloat > 0) ? true: false; 		
 		System.out.println(y);
 
-		
+
 		// OUTPUT FORMATTING ****************************************************************************************
 		int adadeInt = 83;
 		char adadeChar = 'a';
@@ -178,7 +182,7 @@ public class JavaProgram {
 		System.out.printf("%8d%50s%8.1f\n", 1002345, "Amirhosein the skilled programmer", 6.4401);
 		System.out.printf("%8d%50s%8.1f\n", 1, "Amirhosein the programming go-to", 6.091);
 
-		
+
 		// CONFIRMATION INPUT DIALOG BOX ***********************************************************************************
 		System.out.println("Enter an email address: \n");
 		String email = input.nextLine();
@@ -193,11 +197,11 @@ public class JavaProgram {
 			System.out.println("You said Cancel, " + email);		
 		}
 
-		
+
 		// to redirect input text from a file: ************************************************************************
 		// java JavaProgram < text.txt 
-		
-		
+
+
 		// WHILE LOOP *************************************************************************************************
 		int sentinel = 1;
 		while (sentinel < 10){
@@ -205,7 +209,7 @@ public class JavaProgram {
 			sentinel++;
 		}
 
-		
+
 		// DO WHILE LOOP **********************************************************************************************
 		sentinel = 1;
 		do{
@@ -213,13 +217,13 @@ public class JavaProgram {
 			sentinel++;		
 		} while (sentinel < 10);
 
-		
+
 		// FOR LOOP ****************************************************************************************************
 		for (int i = 0; i < 10; i++){
 			System.out.printf("in i e #%d eh \n", i);
 		}
 
-		
+
 		// BREAK; to break OUT of a LOOP; mippare az loop biroon *******************************************************
 		for (int i = 0; i < 10; i++){
 			System.out.printf("in break e #%d eh \n", i);
@@ -228,7 +232,7 @@ public class JavaProgram {
 			}
 		}
 
-		
+
 		// CONTINUE; jumps to the END of the LOOP; mippare tahe loop ***************************************************
 		// continue breaks out of the CURRENT ITERATION in the loop; SKIPS just ONE iteration!!
 		// break breaks out of the loop
@@ -239,7 +243,7 @@ public class JavaProgram {
 			System.out.printf("in continue e #%d eh \n", i);
 		}
 
-		
+
 		// ARRAYS *******************************************************************************************************
 		double[] array = new double[5];
 
@@ -315,9 +319,9 @@ public class JavaProgram {
 		System.out.printf("%s \n", date.getTime());
 		System.out.printf("%s \n", date.toString());
 
-		
+
 		// GUI ***************************************************************************************************************
-		
+
 		// FRAME: create a frame from JFrame in SWING package; javax.swing.JFrame;
 		JFrame frame1 = new JFrame();
 		frame1.setTitle("Frame1 Title");
@@ -325,7 +329,7 @@ public class JavaProgram {
 		frame1.setLocation(200,100);
 		frame1.setVisible(true);
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		// create a second frame
 		JFrame frame2 = new JFrame();
 		frame2.setTitle("Frame2 Title");
@@ -379,10 +383,10 @@ public class JavaProgram {
 
 		// ADD PANEL TO THE FRAME
 		frame3.add(panel);
-		
+
 		// END OF GUI stuff
 
-		
+
 		// STRINGBUILDER *******************************************************************************************
 		// StringBuilder: mesle String eh + inke mishe tagheiresh dad o append kard behesh o ina. immutable nist
 		StringBuilder stringBuilder = new StringBuilder();
@@ -391,14 +395,14 @@ public class JavaProgram {
 		System.out.println(stringBuilder + "\n");
 		System.out.println(stringBuilder.reverse() + "\n");
 
-		
+
 		// MAX_VALUE of an int, float, long, double ****************************************************************
 		System.out.println("\n The maximum value of an int is: " + Integer.MAX_VALUE);
 		System.out.printf("\n The maximum value of an float is: %100.100e", Float.MAX_VALUE);
 		System.out.printf("\n The maximum value of an double is: %100.100e", Double.MAX_VALUE);
 		System.out.println("\n The maximum value of an long is: " + Long.MAX_VALUE);
 		System.out.println("\n The maximum value of an short is: " + Short.MAX_VALUE);
-		
+
 
 		// HEX to DECIMAL CONVERSION: convert a decimal to hexadecimal *********************************************
 		// TYPE CONVERSIONS 
@@ -470,13 +474,13 @@ public class JavaProgram {
 
 		JFrame frame4 = new JFrame();
 		// Flow Layout		
-//		frame4.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
+		//		frame4.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
 		// Grid Layout
 		frame4.setLayout(new GridLayout());
 		frame4.setLayout(new GridLayout(3, 2));
 		// Border Layout
-//		frame.setLayout(new BorderLayout());
-//		frame.setLayout(new BorderLayout(8, 8));
+		//		frame.setLayout(new BorderLayout());
+		//		frame.setLayout(new BorderLayout(8, 8));
 		// Border Layout doesn't work by just altering this line. You have to add a BorderLayout.EAST, BorderLayout.WEST, BorderLayout.SOUTH, BorderLayout.NORTH, BorderLayout.CENTER, when adding elements to the frame, in the add lines. 
 		frame4.add(new JLabel("First Name: "));
 		frame4.add(new JTextField(20));
@@ -492,7 +496,7 @@ public class JavaProgram {
 
 		JFrame frame5 = new JFrame();
 		// Border Layout
-//		frame5.setLayout(new BorderLayout());
+		//		frame5.setLayout(new BorderLayout());
 		frame5.setLayout(new BorderLayout(8, 8));
 		frame5.add(new JLabel("First Name: "), BorderLayout.NORTH);
 		// frame.add(new JTextField(20), BorderLayout.NORTH);
@@ -585,8 +589,8 @@ public class JavaProgram {
 		// Visible		
 		frame6.setVisible(true);
 		// End of GUI-continued
-		
-		
+
+
 
 	} // main method
 
