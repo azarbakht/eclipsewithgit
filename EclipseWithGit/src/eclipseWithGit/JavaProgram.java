@@ -31,7 +31,7 @@ public class JavaProgram {
 
 		// INPUT from Args *************************************************************************************************	
 		for (int i=0; i < args.length; i++){
-			System.out.printf("args[%d] = %d", i, args[i]);
+			System.out.printf("args[%d] = %30s \n ", i, args[i]);
 		}
 
 		// CASTING ***********************************************************************************************
